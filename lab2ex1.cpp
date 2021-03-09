@@ -31,7 +31,7 @@ int main()
             fflush(stdin);
         }
         else if (y > 1.0 || y < -1.0) {
-            cout << "Input error: number cannot be more than 1 or less than 1.\n";
+            cout << "Input error: number cannot be more than 1 or less than -1.\n";
             cin.clear();
             fflush(stdin);
         }
