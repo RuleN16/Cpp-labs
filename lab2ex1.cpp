@@ -18,7 +18,8 @@ double cos1(double y);
 int main()
 {
     cout << "This programm will calculate cosine for you.\n";
-
+    
+    int check;
     double y;
 
     do {
@@ -26,17 +27,19 @@ int main()
         cin >> y;
         if (cin.fail()) {
             cout << "Input error: you must enter the number.\n";
+            check = 0;
             cin.clear();
             cin.ignore(32767, '\n');
             fflush(stdin);
         }
-        else if (y > 1.0 || y < -1.0) {
+        else check = 1;
+        if (y > 1.0 || y < -1.0) {
             cout << "Input error: number cannot be more than 1 or less than -1.\n";
             cin.clear();
             fflush(stdin);
         }
-    } while (y > 1.0 || y < -1.0);
-
+    } while (y > 1.0 || y < -1.0 || check == 0);
+    
     cout << "The cosine from number " << y << " is " << cos1(y) << "";
     return 0;
 }
